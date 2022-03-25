@@ -1,5 +1,5 @@
 ## env-serv-from-scratch
-consist files to spinup k8s on AWS and some services
+consist files to spinup k8s on AWS for some services
 
 # terraform
 spin up eks clustrer in eu-central-1 region (2 worker nodes) with kubernetes dashboard
