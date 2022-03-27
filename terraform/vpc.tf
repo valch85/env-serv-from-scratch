@@ -4,6 +4,8 @@ variable "region" {
 }
 
 provider "aws" {
+  shared_credentials_files = ["~/.aws/credentials"]
+  profile = "env-serv-from-scratch"
   region = var.region
 }
 
@@ -22,7 +24,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.2.0"
 
-  name                 = "attraqt-vpc"
+  name                 = "scratch-eks-vpc"
   cidr                 = "10.0.0.0/16"
   azs                  = data.aws_availability_zones.available.names
   private_subnets      = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
